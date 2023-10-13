@@ -1,16 +1,15 @@
 const app = require('./app');
+const express = require('express')
+const mongoose = require("mongoose")
+
+require("dotenv").config()
+mongoose.Promise = global.Promise
 
 const port = 4000;
 
 app.listen(port, ()=>{
     console.log("servidor rodando na porta: ", port)
 })
-
-const mongoose = require("mongoose")
-
-mongoose.Promise = global.Promise
-
-require("dotenv").config()
 
 console.log(`${process.env.DBPORT}/${process.env.DBNAME}`)
 
